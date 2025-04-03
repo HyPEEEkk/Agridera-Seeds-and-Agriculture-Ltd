@@ -140,13 +140,9 @@ var app = new Vue({
             }
         },
         checkInCart: function () {
-            // Placeholder for checking if the current product is in the cart
-            // This would likely involve iterating through the 'cart' array
             console.log("Checking if product is in cart");
         },
         getCart: function () {
-            // Placeholder for fetching the cart data
-            // This might involve an API call or retrieving data from local storage
             console.log("Fetching cart data");
         }
     }
