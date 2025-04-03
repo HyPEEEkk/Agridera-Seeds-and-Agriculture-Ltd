@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo&display=swap">
+    <title>Tomato all</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+<header>
+    <div class="wrap">
+        <div class="row">
+            <div class="wrap-1">
+                <div id="logo2">
+                    <a href="index.html"><img src="img/Logo.png" alt="Logo" style="margin-top: 20px;"></a>
+                </div>
+            </div>
+            <div class="wrap-1 align-right">
+                <div id="search">
+                    <div id="search-in" class="flex">
+                        <input type="search" placeholder="Search">
+                        <button>Submit</button>
+                    </div>
+                </div>
+                <nav id="menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="">Company Profile</a></li>
+                        <li><a href="tomato.html">Products</a></li>
+                        <li><a href="">Services</a></li>
+                        <li><a href="">R & D</a></li>
+                        <li><a href="contact_us.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div id="background2">
+        <img src="img/mandarin_bg.png" alt="Tomato Hybrids Banner" style="margin-top: 12px; background-size: cover; width: 1920px; height: 480px"/>
+    </div>
+    <div class="content-wrapper">
+        <h1>Agridera Fresh Market Mandarin Hybrids</h1>
+        <p class="text-content2">×××××</p>
+        <div class="description-text">
+            Agridera aspires to be one of the world’s leading companies in the breeding, production,
+            and marketing of mandarin seeds. We heavily invest in research and development to provide
+            innovative solutions to growers and consumers across various countries worldwide. Our breeding
+            focus is on developing disease-resistant cultivars tailored to meet the needs of diverse global markets.
+            <br/>
+            <br/>
+            Currently, our efforts are focused on enhancing resistance to common mandarin diseases such as the Citrus
+            Tristeza Virus (CTV), Alternaria, and Phytophthora, while also improving other key horticultural traits.
+            Our breeding programs are working towards developing mandarins with resistance to new challenges like the
+            Huanglongbing (HLB) disease, while also optimizing flavor, size, shelf life, and fruit quality.
+            <br/>
+            <br/>
+            Our breeding aims to combine the best of both worlds—disease resistance and high-quality fruit characteristics.
+            In terms of horticultural traits, we emphasize uniformity in size, firmness, deep orange color, sweetness,
+            ease of peeling, and extended shelf life. We are focusing on round and slightly elongated shapes to offer a
+            wide variety of choices for consumers.
+        </div>
+
+        <div class="info-section1">
+            <div class="info-divider1"></div>
+            <div class="info-description1">
+                Agridera Mandarin breeding programs focus on three main segments:
+                Greenhouse Mandarin Breeding, Open-field Mandarin Breeding, and Compact Tree Type Mandarins.
+            </div>
+        </div>
+
+        <section class="breeding-section">
+            <div class="breeding-columns">
+                <div class="breeding-column">
+                    <h3>Greenhouse Mandarin Breeding Program</h3>
+                    <div class="column-divider"></div>
+                    <div class="breeding-content">
+                        This program is designed for the Spanish and Turkish markets. The focus is on early-ripening
+                        cultivars with a medium to large round fruit shape, along with resistance to CTV, Alternaria,
+                        and Phytophthora. Some hybrids may also carry resistance to additional diseases such as bacterial
+                        canker and mildew. These mandarins are specifically bred for high fruit quality in controlled environments.
+                    </div>
+                </div>
+
+                <div class="breeding-column">
+                    <h3>Open-field Mandarin Breeding</h3>
+                    <div class="column-divider"></div>
+                    <div class="breeding-content">
+                        This breeding segment targets markets in Brazil, Morocco, and Turkey. The goal is to develop large,
+                        juicy mandarins with a round shape and good resistance to CTV, Alternaria, and Phytophthora. In the
+                        near future, our breeding will also include resistance to the HLB disease as a fundamental trait in our mandarins.
+                    </div>
+                </div>
+
+                <div class="breeding-column">
+                    <h3>Compact Tree Type Mandarins</h3>
+                    <div class="column-divider"></div>
+                    <div class="breeding-content">
+                        This breeding is aimed for Mediterranean regions and focuses on compact tree varieties that can thrive
+                        in smaller spaces while producing round and elongated mandarins. The fruit sizes range from standard
+                        (140-180 grams) to larger sizes (up to 300 grams and more). These mandarins are bred with strong resistance
+                        to CTV, Alternaria, and Phytophthora, with some hybrids incorporating resistance to additional pathogens like mildew and bacterial canker.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="info-section2">
+            <div class="info-divider2"></div>
+            <div class="info-description2">
+                Agridera operates through a network of international and local distributors, ensuring our high-quality
+                mandarin varieties reach growers and consumers around the world.
+            </div>
+        </div>
+
+        <div class="product-layout" id="mandarin">
+            <div class="product-block" v-if="products" v-for="p in products">
+                <a :href="'tomato_one.html#'+p.id">
+                    <img :src="p.image" class="tomato-image">
+                </a>
+                <div class="product-item">
+                    <a :href="'tomato_one.html#'+p.id">
+                    <p class="product-details">{{p.title}}</p>
+                    </a>
+                    <p class="product-name-tomato">{{p.short_text}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer">
+        <div class="footer_content">
+            <div id="links">
+                <ul>
+                    <li><a href="">PROFILE</a></li>
+                    <li><a href="">MANAGEMENT</a></li>
+                    <li><a href="tomato.html">PRODUCTS</a></li>
+                    <li><a href="">R&D</a></li>
+                    <li><a href="">LINKS</a></li>
+                    <li><a href="">SITEMAP</a></li>
+                    <li><a href="contact_us.html">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="social">
+                <a href="https://linkedin.com"><img src="img/Ico_in.png" alt="in"></a>
+                <a href="https://www.instagram.com"><img src="img/Ico_inst.png" alt="inst"></a>
+                <a href="https://www.youtube.com"><img src="img/Ico_tube.png" alt="youtube"></a>
+                <a href="https://twitter.com"><img src="img/Ico_tw.png" alt="twitter"></a>
+                <a href="https://facebook.com"><img src="img/Ico_fb.png" alt="facebook"></a>
+            </div>
+        </div>
+        <p>AGRIDERA SEEDS & AGRICULTURE LTD. © 2020</p>
+    </div>
+</footer>
+</body>
+</html>

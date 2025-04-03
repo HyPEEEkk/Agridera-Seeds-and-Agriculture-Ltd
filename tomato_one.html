@@ -8,31 +8,34 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo&display=swap">
     <title>Tomato one</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js" defer></script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
 <header>
-    <div class="wrapper">
+    <div class="wrap">
         <div class="row">
-            <div class="wrapper1">
+            <div class="wrap-1">
                 <div id="logo2">
-                    <a href="index.html"><img src="img/Logo.png"></a>
+                    <a href="index.html"><img src="img/Logo.png" alt="Logo" style="margin-top: 20px;"></a>
                 </div>
             </div>
-            <div class="wrapper1 align-right">
+            <div class="wrap-1 align-right">
                 <div id="search">
                     <div id="search-in" class="flex">
                         <input type="search" placeholder="Search">
                         <button>Submit</button>
                     </div>
                 </div>
-                <nav>
+                <nav id="menu">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="">Company Profile</a></li>
-                        <li><a href="">Products</a></li>
+                        <li><a href="tomato.html">Products</a></li>
                         <li><a href="">Services</a></li>
                         <li><a href="">R & D</a></li>
-                        <li><a href="">Contact</a></li>
+                        <li><a href="contact_us.html">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -41,90 +44,90 @@
 </header>
 
 <main>
-    <section class="product-intro">
-        <div class="intro-content">
-            <div class="intro-left">
-                <div class="navigation-back"><img src="img/Arrow.png" class="navigation-arrow"/>
-                    <a href="tomato_all.html" class="navigation-text">Return to all tomatoes</a>
+    <div id="mandarin">
+        <div class="product-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="back-nav"><img src="img/Arrow.png" class="back-button"/>
+                        <a href="tomato.html" class="back-link">Return to all tomatoes</a>
+                    </div>
+                    <h1 class="product-name">{{product.title}} <br/>
+                    </h1>
+                    <p class="text-content2">×××××</p>
+                    <div class="product-features">
+                        <h2 style="display: flex; align-items: center; gap: 8px;">
+                            <img src="img/mark.png"> Very high yield and <br>excellent fruit quality!
+                        </h2>
+                    </div>
+                    <div class="section-title">CHARACTERISTICS</div>
+                    <div class="divider"></div>
+                    <div class="disease-resistance">
+                        <b>Resistance</b><br/>
+                        HR: ToMV:0-2; Fol: 1,2; Ve/Vd;<br/>
+                        IR: TYLCV<br/></div>
                 </div>
-                <h1 class="product-title">TAG 1002 (TAG 809) <br/>
-                    <span style="color: #57984C;">Tomato Determinate</span><br/>
-                    <span style="color: #57984C;">Red Standard Round</span>
-                </h1>
-                <p class="text-content2">×××××</p>
-                <div class="product-highlights">
-                    <h2 style="display: flex; align-items: center; gap: 8px;">
-                        <img src="img/mark_ico.png"> Very high yield and <br>excellent fruit quality!
-                    </h2>
-                </div>
-                <div class="section-heading">CHARACTERISTICS</div>
-                <div class="divider"></div>
-                <div class="disease-resistance">
-                    <b>Resistance</b><br/>
-                    HR: ToMV:0-2; Fol: 1,2; Ve/Vd;<br/>
-                    IR: TYLCV<br/></div>
-            </div>
-            <div class="header-right">
-                <img src="img/tag1002.png" class="product-image"/>
-                <div class="download-container">
-                    <button class="download-button">
-                        <img src="img/Ico_pdf.png" class="download-icon-image"/>
-                        <div style="font-weight: bold; color: #57984C;">Download PDF</div>
-                    </button>
+                <div class="header-right">
+                    <img :src="product.image" class="product-image"/>
+                    <div class="download-container">
+                        <button class="download-button">
+                            <img src="img/Ico_pdf.png" class="download-icon-image"/>
+                            <div style="font-weight: bold; color: #57984C;">Download PDF</div>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section class="product-details-section">
-        <div class="details-container">
-            <div class="details-left-column">
-                <div style="margin-bottom: 30px;">
-                    <h2 class="section-heading">Plant</h2>
-                    <img src="img/Line.png">
-                    <div class="product-details-tomato">
-                        Strong vigor that provides good leaf coverage.<br/>
-                        Very high productivity with good fruit setting.<br/>
-                        Early matured variety.
+        <div class="product-info">
+            <div class="info-content">
+                <div class="info-left">
+                    <div style="margin-bottom: 30px;">
+                        <h2 class="section-title">Plant</h2>
+                        <div class="divider"></div>
+                        <div class="product-description" v-for="value in product.desc.plant">
+                            <span>{{value}}</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <h2 class="section-title">Fruit</h2>
+                        <div class="divider"></div>
+                        <div class="product-description" v-for="value in product.desc.fruit">
+                            <span>{{value}}</span>
+                        </div>
                     </div>
                 </div>
-                <div style="margin-bottom: 30px;">
-                    <h2 class="section-heading">Fruit</h2>
-                    <img src="img/Line.png">
-                    <div class="product-details-tomato">
-                        Long shelf life on plant and post harvest.<br/>
-                        Nice shiny attractive deep red color.<br/>
-                        Average fruit size: 140 – 160 grams.
+                <div class="info-right">
+                    <div style="margin-bottom: 30px;">
+                        <h2 class="section-title">Cycle</h2>
+                        <div class="divider"></div>
+                        <div class="product-description" v-for="value in product.desc.cycle">
+                            <span>{{value}}</span>
+                        </div>
+                        <div style="margin-bottom: 30px;">
+                            <h2 class="section-title">Color</h2>
+                            <div class="divider"></div>
+                            <div class="product-description">
+                                <span>{{product.desc.color}}</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="details-right-column">
-                <div style="margin-bottom: 30px;">
-                    <h2 class="section-heading">Cycle</h2>
-                    <img src="img/Line.png">
-                    <div class="product-details-tomato">Spring<br/>Fall<br/>Winter</div>
-                </div>
-                <div style="margin-bottom: 30px;">
-                    <h2 class="section-heading">Color</h2>
-                    <img src="img/Line.png">
-                    <div class="product-details-tomato">Red</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 </main>
 
-<footer>
+<footer class="footer">
     <div class="footer_content">
         <div id="links">
             <ul>
                 <li><a href="">PROFILE</a></li>
                 <li><a href="">MANAGEMENT</a></li>
-                <li><a href="">PRODUCTS</a></li>
+                <li><a href="tomato.html">PRODUCTS</a></li>
                 <li><a href="">R&D</a></li>
                 <li><a href="">LINKS</a></li>
                 <li><a href="">SITEMAP</a></li>
-                <li><a href="">CONTACT</a></li>
+                <li><a href="contact_us.html">CONTACT</a></li>
             </ul>
         </div>
         <div class="social">
